@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>calculator</title>
+<style>
+	body {
+		margin: 10px;
+		background-color: rgb(225, 225, 225);
+	}
+	div {
+		padding: 10px;
+	}
+	#display {
+		width: 600px;
+		height: 80px;
+		line-height: 80px;
+		background-color: rgb(255, 255, 255);
+		text-align: right;
+		font-size: 300%;
+		font-
+
+
+	}
+	td {
+		padding: 1px;
+	}
+	table {
+		width: 600px;
+		height: 500px;
+	}
+	button {
+		width: 128px;
+		height: 128px;
+e	}
+	#itsworking {
+		/*visibility: hidden;*/
+		height: 170;
+		width: 400;
+		padding: 10px;
+	}
+</style>
+<script>
+
+window.onload = function() {
+	var resultBox = document.getElementById("display");
+	var btns = [];
+
+	// can't forget this!
+	var img = document.getElementById("itsworking");
+
+	var button = document.getElementById("clickme");
+	button.onclick = function() {
+
+	};
+};
+
+function displayCharacter
+
+</script>
+</head>
+<body>
+	<div id="display">29 - 5</div>
+	<table>
+		<tr>
+			<td id="00"><button id="(">(</button></td>
+			<td><button id=")">)</button></td>
+			<td><button id="%">%</button></td>
+			<td><button id="back">BACK</button></td>
+			<td><button id="AC">AC</button></td>
+		</tr>
+		<tr>
+			<td><button id="7">7</button></td>
+			<td><button id="8">8</button></td>
+			<td><button id="9">9</button></td>
+			<td><button id="/">/</button></td>
+		</tr>
+		<tr>
+			<td><button id="4">4</button></td>
+			<td><button id="5">5</button></td>
+			<td><button id="6">6</button></td>
+			<td><button id="*">*</button></td>
+		</tr>
+		<tr>
+			<td><button id="1">1</button></td>
+			<td><button id="2">2</button></td>
+			<td><button id="3">3</button></td>
+			<td><button id="-">-</button></td>
+		</tr>
+		<tr>
+			<td><button id="0">0</button></td>
+			<td><button id=".">. </button></td>
+			<td><button id="=">=</button></td>
+			<td><button id="+">+</button></td>
+		</tr>
+
+	</table>
+
+	<img id="itsworking" src="/img/itsworking.gif">
+
+</body>
+</html>
