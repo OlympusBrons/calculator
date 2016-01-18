@@ -42,6 +42,10 @@
 		font-family: 'Averia Serif Libre';
 		font-size: 22px;
 	}
+	button.divide {
+		font-size: 35px;
+	}
+
 	#itsworking {
 		/*visibility: hidden;*/
 		height: 170;
@@ -49,8 +53,8 @@
 		padding: 10px;
 	}
 </style>
-<script>
 
+<script>
 window.onload = function() {
 	var resultBox = document.getElementById("display");
 	var btns = [];
@@ -75,32 +79,32 @@ function displayCharacter
 			<td id="00"><button id="(">(</button></td>
 			<td><button id=")">)</button></td>
 			<td><button id="%">%</button></td>
-			<td><button id="back">BACK</button></td>
+			<td><button id="back"><i class="material-icons">backspace</i></button></td>
 			<td><button id="AC">AC</button></td>
 		</tr>
 		<tr>
 			<td><button id="7">7</button></td>
 			<td><button id="8">8</button></td>
 			<td><button id="9">9</button></td>
-			<td><button id="/">/</button></td>
+			<td><button id="/" class="divide"><strong>&divide;</strong></button></td>
 		</tr>
 		<tr>
 			<td><button id="4">4</button></td>
 			<td><button id="5">5</button></td>
 			<td><button id="6">6</button></td>
-			<td><button id="*">*</button></td>
+			<td><button id="*"><i class="fa fa-times"></i></button></td>
 		</tr>
 		<tr>
 			<td><button id="1">1</button></td>
 			<td><button id="2">2</button></td>
 			<td><button id="3">3</button></td>
-			<td><button id="-">-</button></td>
+			<td><button id="-"><i class="fa fa-minus"></i></button></td>
 		</tr>
 		<tr>
 			<td><button idd="0">0</button></td>
 			<td><button id=".">. </button></td>
 			<td><button id="=">=</button></td>
-			<td><button id="+"><i class="material-icons">add</i></button></td>
+			<td><button id="+"><i class="fa fa-plus"></i></button></td>
 		</tr>
 
 	</table>
