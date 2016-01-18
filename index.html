@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Averia+Serif+Libre' rel='stylesheet' type='text/css'>
 
 <title>calculator</title>
 
@@ -15,27 +18,30 @@
 		padding: 10px;
 	}
 	#display {
-		width: 600px;
+		width: 500px;
 		height: 80px;
 		line-height: 80px;
 		background-color: rgb(255, 255, 255);
 		text-align: right;
-		font-size: 300%;
+		font-size: 200%;
 		font-color: red;
-
-
+		padding: 10px 10px 10px 10px;
+		margin: auto;
 	}
 	td {
-		padding: 1px;
+		margin: auto;
 	}
 	table {
 		width: 600px;
 		height: 500px;
+		margin: auto;
 	}
 	button {
-		width: 128px;
-		height: 128px;
-e	}
+		width: 100px;
+		height: 64px;
+		font-family: 'Averia Serif Libre';
+		font-size: 22px;
+	}
 	#itsworking {
 		/*visibility: hidden;*/
 		height: 170;
@@ -63,7 +69,7 @@ function displayCharacter
 </script>
 </head>
 <body>
-	<div id="display">29 - 25</div>
+	<div id="display">DISPLAY</div>
 	<table>
 		<tr>
 			<td id="00"><button id="(">(</button></td>
@@ -94,7 +100,7 @@ function displayCharacter
 			<td><button idd="0">0</button></td>
 			<td><button id=".">. </button></td>
 			<td><button id="=">=</button></td>
-			<td><button id="+">+</button></td>
+			<td><button id="+"><i class="material-icons">add</i></button></td>
 		</tr>
 
 	</table>
