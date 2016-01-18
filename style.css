@@ -1,0 +1,45 @@
+body {
+		margin: 10px;
+		background-color: rgb(225, 225, 225);
+	}
+div {
+	padding: 10px;
+}
+#display_box {
+	width: 500px;
+	height: 120px;
+	line-height: 80px;
+	background-color: rgb(255, 255, 255);
+	text-align: center;
+	font-size: 200%;
+	font-color: red;
+	padding: 10px 10px 10px 10px;
+	margin: auto;
+}
+#display_output {
+
+}
+td {
+	margin: auto;
+}
+table {
+	width: 600px;
+	height: 500px;
+	margin: auto;
+}
+button {
+	width: 100px;
+	height: 64px;
+	font-family: 'Averia Serif Libre';
+	font-size: 22px;
+}
+button.divide {
+	font-size: 35px;
+}
+
+#itsworking {
+	/*visibility: hidden;*/
+	height: 170;
+	width: 400;
+	padding: 10px;
+}

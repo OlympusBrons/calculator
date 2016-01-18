@@ -2,78 +2,49 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<meta name="google-site-verification" content="2s3vNJ-3y_Zui-ozuvqSNNP1mVmiThaD-1Ze_csXWwg" />
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- Font/Icons Import -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+      rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-<link href='https://fonts.googleapis.com/css?family=Averia+Serif+Libre' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet" type="text/css">
+<link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
 
-<title>calculator</title>
-
-<style>
-	body {
-		margin: 10px;
-		background-color: rgb(225, 225, 225);
-	}
-	div {
-		padding: 10px;
-	}
-	#display {
-		width: 500px;
-		height: 80px;
-		line-height: 80px;
-		background-color: rgb(255, 255, 255);
-		text-align: right;
-		font-size: 200%;
-		font-color: red;
-		padding: 10px 10px 10px 10px;
-		margin: auto;
-	}
-	td {
-		margin: auto;
-	}
-	table {
-		width: 600px;
-		height: 500px;
-		margin: auto;
-	}
-	button {
-		width: 100px;
-		height: 64px;
-		font-family: 'Averia Serif Libre';
-		font-size: 22px;
-	}
-	button.divide {
-		font-size: 35px;
-	}
-
-	#itsworking {
-		/*visibility: hidden;*/
-		height: 170;
-		width: 400;
-		padding: 10px;
-	}
-</style>
+<title>Calculator</title>
 
 <script>
-window.onload = function() {
-	var resultBox = document.getElementById("display");
-	var btns = [];
+window.onload = init;
+var el = {};
+function init() {
+	el.display = document.getElementById("displaybox")
 
-	// can't forget this!
-	var img = document.getElementById("itsworking");
 
-	var button = document.getElementById("clickme");
-	button.onclick = function() {
+
+	var btnNums = document.getElementsByClassName("num");
+	btnNums.onclick = function() {
 
 	};
+		// can't forget this!
+	var img = document.getElementById("itsworking");
+
+	// logs
+	console.log("Page loaded.");
+	console.log(btnNums);
+
 };
 
-function displayCharacter
 
 </script>
 </head>
+
 <body>
-	<div id="display">DISPLAY</div>
+	<div id="display_box">
+		<div id="display_output">1+2=fish</div>
+	</div>
 	<table>
 		<tr>
 			<td id="00"><button id="(">(</button></td>
@@ -83,26 +54,26 @@ function displayCharacter
 			<td><button id="AC">AC</button></td>
 		</tr>
 		<tr>
-			<td><button id="7">7</button></td>
-			<td><button id="8">8</button></td>
-			<td><button id="9">9</button></td>
+			<td><button id="7" class="num">7</button></td>
+			<td><button id="8" class="num">8</button></td>
+			<td><button id="9" class="num">9</button></td>
 			<td><button id="/" class="divide"><strong>&divide;</strong></button></td>
 		</tr>
 		<tr>
-			<td><button id="4">4</button></td>
-			<td><button id="5">5</button></td>
-			<td><button id="6">6</button></td>
+			<td><button id="4" class="num">4</button></td>
+			<td><button id="5" class="num">5</button></td>
+			<td><button id="6" class="num">6</button></td>
 			<td><button id="*"><i class="fa fa-times"></i></button></td>
 		</tr>
 		<tr>
-			<td><button id="1">1</button></td>
-			<td><button id="2">2</button></td>
-			<td><button id="3">3</button></td>
-			<td><button id="-"><i class="fa fa-minus"></i></button></td>
+			<td><button id="1" class="num">1</button></td>
+			<td><button id="2" class="num">2</button></td>
+			<td><button id="3" class="num">3</button></td>
+			<td><button id="minus"><i class="fa fa-minus"></i></button></td>
 		</tr>
 		<tr>
-			<td><button idd="0">0</button></td>
-			<td><button id=".">. </button></td>
+			<td><button id="0" class="num">0</button></td>
+			<td><button id="decimal">.</button></td>
 			<td><button id="=">=</button></td>
 			<td><button id="+"><i class="fa fa-plus"></i></button></td>
 		</tr>
