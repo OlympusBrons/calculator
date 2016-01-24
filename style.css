@@ -12,7 +12,7 @@ div {
 	background-color: rgb(255, 255, 255);
 	text-align: center;
 	font-size: 200%;
-	font-color: red;
+	color: red;
 	padding: 10px 10px 10px 10px;
 	margin: auto;
 }
@@ -39,6 +39,7 @@ button.divide {
 
 #itsworking {
 	/*visibility: hidden;*/
+
 	height: 170;
 	width: 400;
 	padding: 10px;
