@@ -22,23 +22,38 @@
 
 window.onload = init;
 var el = {};
+var img = document.getElementById("itsworking");
 
-function init() {
-	el.display = document.getElementById("display_output");
+function init () {
+	el.displayOutput = document.getElementById("display_output");
+	el.allClear = document.getElementById("AC")
+
 
 	var btnNums = document.getElementsByClassName("num");
-	btnNums.onclick = function() {
+	var btnOperators = document.getElementsByClassName("operator")
+	btnNums.onclick = clickedNum;
 
-	};
-		// can't forget this!	
-	var img = document.getElementById("itsworking");
 
 	// logs
 	console.log("Page loaded.");
-	console.log(btnNums);
+	console.log(btnNums[0].id);
+	console.log("el: " + el);
+	console.log(el.displayOutput.innerHTML);
 
-};
+}
+function clickedNum (num) {
+	console.log(num.innerHTML);
 
+}
+function pushToDisplay (num) {
+	
+}
+function clickedOperator () {
+
+}
+function clickedAC () {
+	
+}
 </script>
 </head>
 
