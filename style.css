@@ -41,6 +41,7 @@ button {
 	border-radius: 6px;
 	background-color: rgb(171, 184, 142);
 	text-align: center;
+	vertical-align: bottom;
 }
 button.double-wide {
 	width: 158px;
