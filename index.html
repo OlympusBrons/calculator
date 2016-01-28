@@ -20,40 +20,44 @@
 
 <script>
 
-window.onload = init;
+
 var el = {};
 var img = document.getElementById("itsworking");
 
 function init () {
 	el.displayOutput = document.getElementById("display_output");
 	el.allClear = document.getElementById("AC")
-
-
-	var btnNums = document.getElementsByClassName("num");
-	var btnOperators = document.getElementsByClassName("operator")
-	btnNums.onclick = clickedNum;
+	el.btnNums = document.getElementsByClassName("num");
+	el.btnOperators = document.getElementsByClassName("operator")
+	//iterating over btnNums to handle onclick event
+	for (var i=0; i < el.btnNums.length; i++) {
+		el.btnNums[i].onclick = numClicked;
+	}
+	for (var i=0; i < el.btnOperators.length; i++) {
+		el.btnOperators[i].onclick = operatorClicked;
+	}
 
 
 	// logs
 	console.log("Page loaded.");
-	console.log(btnNums[0].id);
+	console.log(el.btnNums[0].id);
 	console.log("el: " + el);
 	console.log(el.displayOutput.innerHTML);
-
 }
-function clickedNum (num) {
-	console.log(num.innerHTML);
+function numClicked () {
+	el.displayOutput.innerHTML = this.id;
+}
+function operatorClicked () {
 
 }
 function pushToDisplay (num) {
 	
 }
-function clickedOperator () {
 
-}
 function clickedAC () {
 	
 }
+window.onload = init;
 </script>
 </head>
 
