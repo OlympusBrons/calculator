@@ -21,6 +21,9 @@
 <script>
 // var math = require('mathjs');
 var el = {};
+
+const MAX_LENGTH = 24;
+
 var img = document.getElementById("itsworking");
 
 function init () {
@@ -72,17 +75,21 @@ function init () {
 	console.log(el.displayOutput.innerHTML);
 }
 function numClicked () {
-	el.displayOutput.innerHTML += this.id;
+	if(el.displayOutput.innerHTML.length <= MAX_LENGTH) {
+		el.displayOutput.innerHTML += this.id;
+	}
 
 	// logs
 	console.log("clicked " + this.id);
 }
 function operatorClicked () {
 	var content = el.displayOutput.innerHTML;
+	var lastChar = content.substr(content.length - 1);
 
-	// if the trailing character on display is a number
+	// if the trailing character on display is a number or paren
 	// and the display isn't blank...
-	if(!isNaN(content.substr(content.length - 1)) && content != "") {
+	if(!isNaN(lastChar) || (lastChar == ")") && (content != "") &&
+		(content.length <= MAX_LENGTH)) {
 		switch(this.id) {
 			case "add":
 				// when "+" is clicked,
@@ -129,6 +136,10 @@ function equalsClicked () {
 	el.displayOutput.innerHTML = solution;
 }
 function backspaceClicked () {
+	var content = el.displayOutput.innerHTML;
+	var backspaced = content.substring(0, content.length - 1);
+	el.displayOutput.innerHTML = backspaced;
+
 	console.log("clicked " + this.id);
 }
 
@@ -143,14 +154,17 @@ function sqrtClicked () {
 	console.log("clicked " + this.id);
 }
 function parenClicked () {
+	el.displayOutput.innerHTML += this.innerHTML;
 	console.log("clicked " + this.id);
 }
 function decimalClicked () {
+	el.displayOutput.innerHTML += ".";
 	console.log("clicked " + this.id);
 }
 function percentClicked () {
 	console.log("clicked " + this.id);
 }
+
 window.onload = init;
 </script>
 </head>
@@ -190,7 +204,10 @@ window.onload = init;
 		<button id="equals" class="double-wide">=</button><br>
 	</div>
 	<!-- UNCOMMENT ONLY WHEN IT WORKS! -->
-	<!-- <img id="itsworking" src="/img/itsworking.gif"> -->
+	<br>
+	<br>
+	<center><img id="itsworking" src="/img/itsworking.gif"><br>
+	(sort of)</center>
 </div>
 </body>
 </html>
