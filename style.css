@@ -8,13 +8,15 @@ body {
 }
 #display_box {
 	width: 500px;
-	height: 120px;
+	height: 60px;
 	line-height: 80px;
 	background-color: white;
 	text-align: center;
 	font-size: 200%;
 	padding: 10px 10px 10px 10px;
-	margin: auto;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
 }
 #display_output {
 
