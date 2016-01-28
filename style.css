@@ -23,7 +23,6 @@ body {
 	margin: 0 auto;
 	width: 600px;
 	background-color: darkgray;
-	position: absolute;
 	/*display: inline-block;*/
 	border: solid;
 	border-color: black;
