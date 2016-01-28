@@ -17,17 +17,14 @@
 <link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
 
 <title>Calculator</title>
-
+<script src="./node_modules/mathjs" type="text/javascript"></script>
 <script>
-
-
+// var math = require('mathjs');
 var el = {};
 var img = document.getElementById("itsworking");
 
 function init () {
 	el.displayOutput = document.getElementById("display_output");
-	el.allClear = document.getElementById("AC")
-	el.allClear.onclick = allClear;
 
 	el.btnNums = document.getElementsByClassName("num");
 	//iterating over numbers to handle onclick event
@@ -41,6 +38,32 @@ function init () {
 		el.btnOperators[i].addEventListener("click", operatorClicked);
 	}
 
+	el.allClear = document.getElementById("AC")
+	el.allClear.addEventListener("click", allClear);
+
+	el.backspace = document.getElementById("backspace");
+	el.backspace.addEventListener("click", backspaceClicked);
+
+	el.btnDecimal = document.getElementById("decimal");
+	el.btnDecimal.addEventListener("click", decimalClicked);
+
+	el.btnPercent = document.getElementById("percent");
+	el.btnPercent.addEventListener("click", percentClicked);
+
+	el.btnEquals = document.getElementById("equals");
+	el.btnEquals.addEventListener("click", equalsClicked);
+
+	el.btnExp = document.getElementById("exponent");
+	el.btnExp.addEventListener("click", exponentClicked);
+
+	el.btnSqrt = document.getElementById("sqrt");
+	el.btnSqrt.addEventListener("click", sqrtClicked);
+
+	el.btnParenOpen = document.getElementById("paren-open");
+	el.btnParenOpen.addEventListener("click", parenClicked);
+
+	el.btnParenClose = document.getElementById("paren-close");
+	el.btnParenClose.addEventListener("click", parenClicked);
 
 	// init logs
 	console.log("Page loaded.");
@@ -52,13 +75,14 @@ function numClicked () {
 	el.displayOutput.innerHTML += this.id;
 
 	// logs
-	console.log("this: " + this);
+	console.log("clicked " + this.id);
 }
 function operatorClicked () {
 	var content = el.displayOutput.innerHTML;
 
-	// if the trailing character on display is a number...
-	if(!isNaN(content.substr(content.length - 1))) {
+	// if the trailing character on display is a number
+	// and the display isn't blank...
+	if(!isNaN(content.substr(content.length - 1)) && content != "") {
 		switch(this.id) {
 			case "add":
 				// when "+" is clicked,
@@ -92,14 +116,37 @@ function operatorClicked () {
 				alert("something went horribly wrong!");
 		}
 	}
+	// logs
+	console.log("clicked " + this.id)
 }
-function pushToDisplay (num) {
-	
+function equalsClicked () {
+	console.log("clicked " + this.id);
+
+	var content = el.displayOutput.innerHTML;
+	console.log(content);
+}
+function backspaceClicked () {
+	console.log("clicked " + this.id);
 }
 
 function allClear () {
 	el.displayOutput.innerHTML = "";
-	console.log("clicked AC");
+	console.log("clicked " + this.id);
+}
+function exponentClicked () {
+	console.log("clicked " + this.id);
+}
+function sqrtClicked () {
+	console.log("clicked " + this.id);
+}
+function parenClicked () {
+	console.log("clicked " + this.id);
+}
+function decimalClicked () {
+	console.log("clicked " + this.id);
+}
+function percentClicked () {
+	console.log("clicked " + this.id);
 }
 window.onload = init;
 </script>
@@ -116,7 +163,7 @@ window.onload = init;
 		<button id="8" class="num">8</button>
 		<button id="9" class="num">9</button>
 		<button id="divide" class="operator"><strong>&divide;</strong></button>
-		<button id="back"><i class="material-icons">backspace</i></button>
+		<button id="backspace"><i class="material-icons">backspace</i></button>
 		<button id="AC">AC</button><br>
 		
 		<button id="4" class="num">4</button>
@@ -130,7 +177,7 @@ window.onload = init;
 		<button id="2" class="num">2</button>
 		<button id="3" class="num">3</button>
 		<button id="subtract" class="operator"><i class="fa fa-minus"></i></button>
-		<button id="superscript"><i class="fa fa-superscript"></i></button>
+		<button id="exponent"><i class="fa fa-superscript"></i></button>
 		<button id="sqrt">&radic;</button><br>
 		
 		<button id="0" class="num">0</button>
