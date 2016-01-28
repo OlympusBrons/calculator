@@ -27,35 +27,79 @@ var img = document.getElementById("itsworking");
 function init () {
 	el.displayOutput = document.getElementById("display_output");
 	el.allClear = document.getElementById("AC")
+	el.allClear.onclick = allClear;
+
 	el.btnNums = document.getElementsByClassName("num");
-	el.btnOperators = document.getElementsByClassName("operator")
-	//iterating over btnNums to handle onclick event
+	//iterating over numbers to handle onclick event
 	for (var i=0; i < el.btnNums.length; i++) {
-		el.btnNums[i].onclick = numClicked;
+	el.btnNums[i].addEventListener("click", numClicked);
 	}
+
+	el.btnOperators = document.getElementsByClassName("operator")
+	//iterating over operators to handle onclick event
 	for (var i=0; i < el.btnOperators.length; i++) {
-		el.btnOperators[i].onclick = operatorClicked;
+		el.btnOperators[i].addEventListener("click", operatorClicked);
 	}
 
 
-	// logs
+	// init logs
 	console.log("Page loaded.");
 	console.log(el.btnNums[0].id);
 	console.log("el: " + el);
 	console.log(el.displayOutput.innerHTML);
 }
 function numClicked () {
-	el.displayOutput.innerHTML = this.id;
+	el.displayOutput.innerHTML += this.id;
+
+	// logs
+	console.log("this: " + this);
 }
 function operatorClicked () {
+	var content = el.displayOutput.innerHTML;
 
+	// if the trailing character on display is a number...
+	if(!isNaN(content.substr(content.length - 1))) {
+		switch(this.id) {
+			case "add":
+				// when "+" is clicked,
+				el.displayOutput.innerHTML += "+";
+
+				//log
+				console.log("case \"add\"");
+				break;
+			case "subtract":
+				// when "-" is clicked,
+				el.displayOutput.innerHTML += "-";
+
+				//log
+				console.log("case \"subtract\"");
+				break;
+			case "multiply":
+				// when "*" is clicked,
+				el.displayOutput.innerHTML += "*";
+
+				//log
+				console.log("case \"multiply\"");
+				break;
+			case "divide":
+				// when "/" is clicked,
+				el.displayOutput.innerHTML += "/";
+
+				//log
+				console.log("case \"divide\"");
+				break;
+			default:
+				alert("something went horribly wrong!");
+		}
+	}
 }
 function pushToDisplay (num) {
 	
 }
 
-function clickedAC () {
-	
+function allClear () {
+	el.displayOutput.innerHTML = "";
+	console.log("clicked AC");
 }
 window.onload = init;
 </script>
@@ -64,7 +108,7 @@ window.onload = init;
 <body>
 <div id="calculator">
 	<div id="display_box">
-		<div id="display_output">1+2=development</div>
+		<div id="display_output"></div>
 	</div>
 
 	<div id="buttons_area">
