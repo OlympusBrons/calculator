@@ -1,9 +1,10 @@
 body {
-		margin: 10px;
-		background-color: #D4D4D4
+		margin: 0;
+		padding: 0;
+		background-color: lightgray;
 	}
-div {
-	padding: 0px;
+#calculator {
+
 }
 #display_box {
 	width: 500px;
@@ -12,36 +13,51 @@ div {
 	background-color: white;
 	text-align: center;
 	font-size: 200%;
-	color
 	padding: 10px 10px 10px 10px;
 	margin: auto;
 }
 #display_output {
 
 }
-td {
-	margin: auto;
-	padding: 0px;
-}
-table {
+#buttons_area {
+	margin: 0 auto;
 	width: 600px;
-	height: 500px;
-	margin: auto;
+	background-color: darkgray;
+	position: absolute;
+	/*display: inline-block;*/
+	border: solid;
+	border-color: black;
+	text-align: center;
 
 }
 button {
-	width: 100px;
-	height: 64px;
+	margin: 2px;
+	width: 75px;
+	height: 50px;
+	line-height: 50px;
 	font-family: 'Averia Serif Libre';
 	font-size: 22px;
+	border-radius: 6px;
+	background-color: rgb(171, 184, 142);
+	text-align: center;
 }
-button.divide {
-	font-size: 35px;
+button.double-wide {
+	width: 158px;
 }
-
+button.operator {
+	background-color: #cf9;
+}
+button.num {
+	background-color: rgb(255, 255, 204);
+}
+#divide {
+	font-size: 40px;	
+}
+#equals {
+	background-color: #a2ffff;
+}
 #itsworking {
 	/*visibility: hidden;*/
-
 	height: 170;
 	width: 400;
 	padding: 10px;

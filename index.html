@@ -19,18 +19,18 @@
 <title>Calculator</title>
 
 <script>
+
 window.onload = init;
 var el = {};
+
 function init() {
 	el.display = document.getElementById("displaybox");
-
-
 
 	var btnNums = document.getElementsByClassName("num");
 	btnNums.onclick = function() {
 
 	};
-		// can't forget this!
+		// can't forget this!	
 	var img = document.getElementById("itsworking");
 
 	// logs
@@ -39,51 +39,45 @@ function init() {
 
 };
 
-
 </script>
 </head>
 
 <body>
+<div id="calculator">
 	<div id="display_box">
 		<div id="display_output">1+2=development</div>
 	</div>
-	<table>
-		<tr>
-			<td id="00"><button id="(">(</button></td>
-			<td><button id=")">)</button></td>
-			<td><button id="%">%</button></td>
-			<td><button id="back"><i class="material-icons">backspace</i></button></td>
-			<td><button id="AC">AC</button></td>
-		</tr>
-		<tr>
-			<td><button id="7" class="num">7</button></td>
-			<td><button id="8" class="num">8</button></td>
-			<td><button id="9" class="num">9</button></td>
-			<td><button id="/" class="divide"><strong>&divide;</strong></button></td>
-		</tr>
-		<tr>
-			<td><button id="4" class="num">4</button></td>
-			<td><button id="5" class="num">5</button></td>
-			<td><button id="6" class="num">6</button></td>
-			<td><button id="*"><i class="fa fa-times"></i></button></td>
-		</tr>
-		<tr>
-			<td><button id="1" class="num">1</button></td>
-			<td><button id="2" class="num">2</button></td>
-			<td><button id="3" class="num">3</button></td>
-			<td><button id="minus"><i class="fa fa-minus"></i></button></td>
-		</tr>
-		<tr>
-			<td><button id="0" class="num">0</button></td>
-			<td><button id="decimal">.</button></td>
-			<td><button id="=">=</button></td>
-			<td><button id="+"><i class="fa fa-plus"></i></button></td>
-		</tr>
 
-	</table>
-
+	<div id="buttons_area">
+		<button id="7" class="num">7</button>
+		<button id="8" class="num">8</button>
+		<button id="9" class="num">9</button>
+		<button id="divide" class="operator"><strong>&divide;</strong></button>
+		<button id="back"><i class="material-icons">backspace</i></button>
+		<button id="AC">AC</button><br>
+		
+		<button id="4" class="num">4</button>
+		<button id="5" class="num">5</button>
+		<button id="6" class="num">6</button>
+		<button id="multiply" class="operator"><i class="fa fa-times"></i></button>
+		<button id="paren-open">(</button>
+		<button id="paren-close">)</button><br>
+		
+		<button id="1" class="num">1</button>
+		<button id="2" class="num">2</button>
+		<button id="3" class="num">3</button>
+		<button id="subtract" class="operator"><i class="fa fa-minus"></i></button>
+		<button id="superscript"><i class="fa fa-superscript"></i></button>
+		<button id="sqrt">&radic;</button><br>
+		
+		<button id="0" class="num">0</button>
+		<button id="decimal">.</button>
+		<button id="percent">%</button>
+		<button id="add" class="operator"><i class="fa fa-plus"></i></button>
+		<button id="equals" class="double-wide">=</button><br>
+	</div>
 	<!-- UNCOMMENT ONLY WHEN IT WORKS! -->
 	<!-- <img id="itsworking" src="/img/itsworking.gif"> -->
-
+</div>
 </body>
 </html>
