@@ -12,7 +12,7 @@
       rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre"
+ <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre"
       rel="stylesheet" type="text/css">
 <link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
 
@@ -22,7 +22,7 @@
 // var math = require('mathjs');
 var el = {};
 
-const MAX_LENGTH = 24;
+const MAX_LENGTH = 30;
 
 var img = document.getElementById("itsworking");
 
@@ -77,6 +77,8 @@ function init () {
 function numClicked () {
 	if(el.displayOutput.innerHTML.length <= MAX_LENGTH) {
 		el.displayOutput.innerHTML += this.id;
+	} else {
+		alert("You have exceeded the maximum allowed characters.");
 	}
 
 	// logs
@@ -88,36 +90,27 @@ function operatorClicked () {
 
 	// if the trailing character on display is a number or paren
 	// and the display isn't blank...
-	if(!isNaN(lastChar) || (lastChar == ")") && (content != "") &&
+	if(!isNaN(parseFloat(lastChar)) &&
+		isFinite(lastChar) ||
+		(lastChar == ")") &&
+		(content != "") &&
 		(content.length <= MAX_LENGTH)) {
 		switch(this.id) {
 			case "add":
 				// when "+" is clicked,
 				el.displayOutput.innerHTML += "+";
-
-				//log
-				console.log("case \"add\"");
 				break;
 			case "subtract":
 				// when "-" is clicked,
 				el.displayOutput.innerHTML += "-";
-
-				//log
-				console.log("case \"subtract\"");
 				break;
 			case "multiply":
 				// when "*" is clicked,
 				el.displayOutput.innerHTML += "*";
-
-				//log
-				console.log("case \"multiply\"");
 				break;
 			case "divide":
 				// when "/" is clicked,
 				el.displayOutput.innerHTML += "/";
-
-				//log
-				console.log("case \"divide\"");
 				break;
 			default:
 				alert("something went horribly wrong!");
@@ -128,7 +121,6 @@ function operatorClicked () {
 }
 function equalsClicked () {
 	console.log("clicked " + this.id);
-
 	var content = el.displayOutput.innerHTML;
 	var solution = math.eval(content);
 	console.log("content: " + content);
@@ -163,6 +155,9 @@ function decimalClicked () {
 }
 function percentClicked () {
 	console.log("clicked " + this.id);
+}
+function handleErrors () {
+
 }
 
 window.onload = init;
